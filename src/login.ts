@@ -29,6 +29,7 @@ export class LoginForm {
   frameworkCssAttr: string; 
   inputsClass: string;
   btnClass: string;
+  alertClass: string;
  
   constructor(fb: FormBuilder, private element:ElementRef) {  
     //Get attributes values
@@ -47,11 +48,13 @@ export class LoginForm {
         case 'materialize':
             this.inputsClass = "validate";
             this.btnClass = "btn-large waves-effect waves-light teal default_color scrollspy";
+            this.alertClass = "card-panel";
             break;
         //Bootstrap
         default:
             this.inputsClass = "form-control"; 
             this.btnClass = "btn btn-default";
+            this.alertClass = "alert alert-info";
             break;
     }
     

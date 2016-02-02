@@ -40,24 +40,30 @@ Getting started
     bootstrap(LoginForm);
     
 4. Add the tag <login-form>::
-
+    
+    //With type email
     <login-form 
         type_username_or_email="email" email="Correo electrónico" send="Ingresar"
         password="Contraseña" frameworkCss="materialize" url="login">
     </login-form>
     
+    //With type username
+    <login-form 
+        type_username_or_email="username" username="Nombre de usuario" send="Ingresar"
+        password="Contraseña" frameworkCss="materialize" url="login">
+    </login-form>
 
 The attributes are not obligatory have default values. For example::
     
     Value default of 'type_username_or_email': In this case value default is the type email.
-    Value default of 'username': 'Username'..
+    Value default of 'username': 'Username'.
     Value default of 'email': 'Email'.
     Value default of 'password': 'Password'.
+    Value default of 'frameworkCss': 'bootstrap'.
     Value default of 'send': 'Send'.
     Value default of 'url': 'send'.
-    Value default of 'frameworkCss': 'bootstrap'
     
-This last attribute is the url that receives POST parameters to the backend.
+This last attribute (url) is the url that receives POST parameters to the backend.
 
 5. This component using API Fetch, if is necessary add polyfill https://github.com/github/fetch. Not is obligatory.
     
