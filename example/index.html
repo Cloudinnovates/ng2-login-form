@@ -1,0 +1,45 @@
+<html>
+
+  <head>
+    <title>Test ng2-login-form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css" />
+    <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  -->
+    
+    <!-- 1. Load libraries -->
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    
+    <!-- 2. Configure SystemJS -->
+    <script>
+      System.config({
+        paths: {
+            'ng2-login-form/*': 'node_modules/ng2-login-form/*.js',
+        },
+        packages: {        
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('app/boot')
+            .then(null, console.error.bind(console));
+    </script>
+
+  </head>
+
+  <!-- 3. ng2-login-form application -->
+  <body>
+    <h3>Test ng2-login-form </h3>
+    <hr>
+    <login-form 
+        type_username_or_email="username" username="Usuario" email="Correo electrónico" send="Ingresar"
+        password="Contraseña" frameworkCss="materialize" url="login">
+    </login-form>
+  </body>
+
+</html>
