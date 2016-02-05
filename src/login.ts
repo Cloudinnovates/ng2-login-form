@@ -188,10 +188,10 @@ export class LoginForm {
     //Parameters
     let creds = "";
     if(this.typeUsernameOrEmailAttr.trim() == "email"){
-        creds = "email=" + value.email + "&username=" + value.username;
+        creds = "email=" + value.email + "&password=" + value.password;
     }
     else{
-        creds = "username=" + value.username + "&username=" + value.username;
+        creds = "username=" + value.username + "&password=" + value.password;
     }
 
     //Send email
