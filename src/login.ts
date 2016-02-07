@@ -197,6 +197,7 @@ export class LoginForm {
     //Send email
     window.fetch(this.urlAttr, {
         method: 'POST',
+        credentials: 'include',
         headers: {
             "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
         },
@@ -205,10 +206,15 @@ export class LoginForm {
     .then((data) => {
         let res = data.text();
         res.then((message) => {
-            result.innerHTML = message;
-            //Show card message and hide progress
-            result_card.style.display = "block";
-            progress.style.display = "none";
+            //Check login redirect
+            if(data.ok && data.status == 200){
+              window.location = data.url;
+            }else{
+              result.innerHTML = message;
+              //Show card message and hide progress
+              result_card.style.display = "block";
+              progress.style.display = "none";
+            }
         });
     })
     .catch((error) => {

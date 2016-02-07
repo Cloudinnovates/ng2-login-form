@@ -13,7 +13,7 @@ Getting started
 1. Install via npm::
 
     npm install ng2-login-form --save
-    
+
 2. Configure SystemJs. In this case the main folder is **app**::
 
     <script>
@@ -21,7 +21,7 @@ Getting started
         paths: {
             'ng2-login-form/*': 'node_modules/ng2-login-form/*.js',
         },
-        packages: {        
+        packages: {
           app: {
             format: 'register',
             defaultExtension: 'js'
@@ -31,30 +31,30 @@ Getting started
       System.import('app/boot')
             .then(null, console.error.bind(console));
     </script>
-    
+
 3. Add to the file boot.ts the class LoginForm::
 
     import {bootstrap} from 'angular2/platform/browser';
     import {LoginForm} from 'ng2-login-form/src/login';
 
     bootstrap(LoginForm);
-    
+
 4. Add the tag <login-form>::
-    
+
     //With type email
-    <login-form 
+    <login-form
         type_username_or_email="email" email="Correo electrónico" send="Ingresar"
         password="Contraseña" frameworkCss="materialize" url="login">
     </login-form>
-    
+
     //With type username
-    <login-form 
+    <login-form
         type_username_or_email="username" username="Nombre de usuario" send="Ingresar"
         password="Contraseña" frameworkCss="materialize" url="login">
     </login-form>
 
 The attributes are not obligatory have default values. For example::
-    
+
     Value default of 'type_username_or_email': In this case value default is the type email.
     Value default of 'username': 'Username'.
     Value default of 'email': 'Email'.
@@ -62,11 +62,13 @@ The attributes are not obligatory have default values. For example::
     Value default of 'frameworkCss': 'bootstrap'.
     Value default of 'send': 'Send'.
     Value default of 'url': 'send'.
-    
+
 This last attribute (url) is the url that receives POST parameters to the backend.
 
 5. This component using API Fetch, if is necessary add polyfill https://github.com/github/fetch. Not is obligatory.
-    
+
+6. For redirect the component check if data.status is 200 and data.ok is true. If this condition is correct redirect to url data.url defined. The object data is the response.
+
 Example
 -------
 
@@ -78,4 +80,3 @@ To the run example of the folder **example**::
     npm start
 
 .. _index: https://github.com/mapeveri/ng2-login-form/blob/master/example/index.html
-
