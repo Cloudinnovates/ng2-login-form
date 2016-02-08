@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mapeveri/ng2-login-form.git"
+    "url": "https://github.com/ItEngine/ng2-login-form.git"
   },
   "keywords": [
     "Angular2"
@@ -17,9 +17,9 @@
   "author": "Martín Peveri",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mapeveri/ng2-login-form/issues"
+    "url": "https://github.com/ItEngine/ng2-login-form/issues"
   },
-  "homepage": "https://github.com/mapeveri/ng2-login-form",
+  "homepage": "https://github.com/ItEngine/ng2-login-form",
   "dependencies": {
     "angular2": "^2.0.0-beta.2",
     "es6-promise": "^3.0.2",
