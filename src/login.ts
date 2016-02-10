@@ -53,7 +53,9 @@ const DEFAULT_TEMPLATE = `
   <div class="container">
       <div class="col m10 offset-m1 s12">
           <div class="{{ alertClass }}" id="result_card" style="display: none">
-                 <i class="tiny material-icons">info_outline</i> <span class="grey-text text-darken-4" id="result"></span>
+                <i class="tiny material-icons" *ngIf="frameworkCssAttr.toLowerCase() == 'materialize'">info_outline</i>
+                <i class="glyphicon glyphicon-info-sign" *ngIf="frameworkCssAttr.toLowerCase() == 'bootstrap'"></i>
+                <span class="grey-text text-darken-4" id="result"></span>
               </div>
           <div class="row">
               <form [ngFormModel]="myForm" (ngSubmit)="sendLogin(myForm.value)" class="col s12">
